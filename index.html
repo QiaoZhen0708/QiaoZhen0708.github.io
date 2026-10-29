@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乔真的第一个网页</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: linear-gradient(160deg, #fdf6ec 0%, #e8f0e9 55%, #dfe9f5 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: #2f3a33;
+  }
+  .card {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(60, 80, 70, 0.14);
+    max-width: 620px;
+    width: 100%;
+    padding: 48px 44px 36px;
+  }
+  .wave { font-size: 40px; }
+  h1 { font-size: 30px; margin: 14px 0 10px; letter-spacing: 1px; }
+  .sub { font-size: 16px; color: #5c6f63; line-height: 1.7; }
+  .rule { height: 1px; background: #dde5dd; margin: 28px 0; }
+  h2 { font-size: 17px; margin-bottom: 12px; color: #3d5546; }
+  ul { list-style: none; }
+  li {
+    padding: 9px 14px;
+    background: #f4f8f4;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  li::before { content: "🌿 "; }
+  button {
+    margin-top: 6px;
+    background: #4a7a5b;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 26px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  button:hover { background: #3c6549; }
+  #cheer { margin-top: 14px; font-size: 16px; color: #b0622f; min-height: 24px; }
+  footer { margin-top: 30px; font-size: 13px; color: #93a397; text-align: center; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="wave">👋</div>
+    <h1>你好，我是乔真</h1>
+    <p class="sub">这是我的第一个网页，用 GitHub Pages 发布。<br>现在它只是个示例页练练手，以后想放什么，慢慢往里添。</p>
+
+    <div class="rule"></div>
+
+    <h2>这个页面能放什么（示例）</h2>
+    <ul>
+      <li>一段自我介绍</li>
+      <li>我的文章和记录</li>
+      <li>照片与生活片段</li>
+      <li>想分享给朋友的东西</li>
+    </ul>
+
+    <div class="rule"></div>
+
+    <h2>点一下试试</h2>
+    <button onclick="cheer()">给我一句鼓励</button>
+    <p id="cheer"></p>
+
+    <footer>QiaoZhen0708 · 建于 2026 年 10 月 · 由 GitHub Pages 托管</footer>
+  </main>
+
+  <script>
+    const lines = [
+      "不必妄自菲薄，先去再说。",
+      "左右不了别人和环境，只能自己使劲多划两下超过去。",
+      "真的勇士，敢于直面惨淡的人生。",
+      "第一步已经迈出来了，剩下的慢慢来。"
+    ];
+    let i = 0;
+    function cheer() {
+      document.getElementById('cheer').textContent = lines[i % lines.length];
+      i++;
+    }
+  </script>
+</body>
+</html>
